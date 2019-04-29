@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{143:function(e){e.exports={pages:[{componentChunkName:"component---src-pages-index-js",jsonName:"index",path:"/"},{componentChunkName:"component---src-templates-index-js",jsonName:"sweet-pandas-c35",path:"/sweet-pandas/"}],dataPaths:{"dev-404-page-5f9":"386/path---dev-404-page-5-f-9-fab-0SUcWyAf8ecbYDsMhQkEfPzV8",index:"747/path---index-6a9-6fYBamsIBvfbbmUse7k4YeepSQ0","sweet-pandas-c35":"669/path---sweet-pandas-c-35-92e-nW9xTdRVzBSubRjB4kAcyNnZneY"}}}}]);
+//# sourceMappingURL=pages-manifest-5881e5037f38864a8a7d.js.map

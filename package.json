@@ -1,0 +1,39 @@
+{
+  "name": "site",
+  "private": true,
+  "description": "Gatsby based homepage",
+  "version": "0.1.0",
+  "author": "Andy Brace",
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "dependencies": {
+    "gatsby": "^2.0.117",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "gatsby-theme-andybrace": "*"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1",
+    "prettier": "^1.16.4"
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop --host 0.0.0.0",
+    "deploy:github": "npm run build && node ./scripts/deploy-github",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  }
+}
