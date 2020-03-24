@@ -1,23 +1,23 @@
 {
-  "name": "site",
+  "name": "andybrace.come",
   "private": true,
-  "description": "Gatsby based homepage",
+  "description": "Gatsby based site generator for andybrace.com",
   "version": "0.1.0",
   "author": "Andy Brace",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/openbook/andybrace.com/issues"
   },
   "dependencies": {
     "gatsby": "^2.0.117",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
-    "gatsby-theme-andybrace": "*"
+    "gatsby-theme-div-portfolio": "git://github.com/openbook/gatsby-theme-div-portfolio#develop"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",
     "prettier": "^1.16.4"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/openbook/andybrace.com",
   "keywords": [
     "gatsby"
   ],
@@ -25,12 +25,12 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/openbook/andybrace.com"
   },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop --host 0.0.0.0",
-    "deploy:github": "npm run build && node ./scripts/deploy-github",
+    "deploy:github": "npm run build && gh-pages -d build",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",

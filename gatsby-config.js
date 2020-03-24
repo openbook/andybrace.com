@@ -33,16 +33,8 @@ module.exports = {
       }
     ]
   },
-  __experimentalThemes: [
-    {
-      resolve: `gatsby-theme-andybrace`,
-      options: {}
-    }
-  ],
+  __experimentalThemes: [`gatsby-theme-div-portfolio`],
   plugins: [
-    {
-      resolve: `gatsby-plugin-sass`
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
