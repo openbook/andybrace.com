@@ -23,7 +23,7 @@ npm run dev                      # http://localhost:4321
 | `npm run preview` | Serves `dist/` locally. |
 | `npm run check` | Astro and TypeScript type check. |
 | `npm run lint` | ESLint, including accessibility rules for `.tsx` and StyleX rules. |
-| `npm run test:a11y` | Builds, then runs the Playwright tests on desktop and mobile: axe, 320px reflow, embed captions, and no scripts or cookies. |
+| `npm run test:a11y` | Builds, then runs the Playwright tests on desktop and mobile: axe, 320px reflow, embed captions, no scripts or cookies, and security headers. |
 | `npm run test:lighthouse` | Builds, then runs Lighthouse three times against budgets. |
 | `npm run verify` | All of the above in order. Run it before every commit. |
 
@@ -39,6 +39,8 @@ The site says it's accessible and fast. Each claim has a check, and `npm run ver
 | Images, demos and maps have a text equivalent | Image alt (axe), embed captions | `tests/a11y.spec.ts`, `tests/media.spec.ts` |
 | Fast first load | Lighthouse 95+ and under 100 KB | `lighthouserc.cjs` |
 | No JavaScript, cookies or browser storage | Script requests, cookies and storage checked | `tests/privacy.spec.ts` |
+| Browser enforces it: no scripts, framing or forms | Security headers sent, no CSP violations | `public/_headers`, `tests/headers.spec.ts` |
+| Dependencies stay current | Weekly Dependabot PRs, checked by CI | `.github/dependabot.yml` |
 | Keyboard, screen reader, zoom | Manual, with results logged | `ACCESSIBILITY.md` |
 
 Why each check exists is in `docs/decisions/`, starting with 0005 and 0023.
@@ -61,7 +63,7 @@ docs/decisions/ Decisions about content, design and code, one file each.
 
 ## Working on it
 
-[AGENTS.md](AGENTS.md) has the rules for anyone changing the code, person or agent. [CONTRIBUTING.md](CONTRIBUTING.md) covers the workflow. [ACCESSIBILITY.md](ACCESSIBILITY.md) records the accessibility target and the manual checks.
+[AGENTS.md](AGENTS.md) has the rules for anyone changing the code, person or agent. [CONTRIBUTING.md](CONTRIBUTING.md) covers the workflow. [ACCESSIBILITY.md](ACCESSIBILITY.md) records the accessibility target and the manual checks. [SECURITY.md](SECURITY.md) explains how to report a security problem.
 
 ## What gets committed, and how that's checked
 
