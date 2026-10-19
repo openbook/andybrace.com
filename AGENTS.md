@@ -14,7 +14,7 @@ Anyone landing on the site should know within about 30 seconds what I do, who th
 ## Copy
 
 - Page copy comes from signed-off text. Don't rewrite it or change its voice. If copy is missing, leave a clear placeholder and say so.
-- **Never name a client.** Use the anonymous wording you're given. The pre-commit denylist will block names that slip through.
+- **Never name a client.** Use the anonymous wording you're given. The pre-commit denylist will block names that slip through. Commit messages and PR descriptions are public too, and the denylist only checks file changes, so check them yourself.
 - Write plainly. Avoid em dashes, filler and stock AI phrasing.
 - Explain a choice by what it does for the code, the site or its visitors.
 
