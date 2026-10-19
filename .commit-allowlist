@@ -13,6 +13,7 @@ tsconfig.json
 README.md
 ACCESSIBILITY.md
 LICENSE
+SECURITY.md
 src/*
 public/*
 scripts/*
