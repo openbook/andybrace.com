@@ -1,0 +1,28 @@
+# Paths that may be committed. Anything else is blocked (deny by default).
+# One shell glob per line; * matches across directories.
+
+.commit-allowlist
+.githooks/*
+.github/*
+.gitignore
+.browserslistrc
+astro.config.mjs
+package.json
+package-lock.json
+tsconfig.json
+README.md
+ACCESSIBILITY.md
+LICENSE
+src/*
+public/*
+scripts/*
+tests/*
+eslint.config.js
+playwright.config.ts
+lighthouserc.cjs
+AGENTS.md
+CLAUDE.md
+CONTRIBUTING.md
+docs/*
+.claude/settings.json
+.claude/hooks/*

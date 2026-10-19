@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# Blocks a commit that could publish something it shouldn't. See README: "What gets committed".
+set -euo pipefail
+
+root=$(git rev-parse --show-toplevel)
+denylist="${HOMESITE_DENYLIST:-$root/../.private/denylist.txt}"
+failed=0
+
+fail() { printf '\033[31m✗ %s\033[0m\n' "$1" >&2; failed=1; }
+
+# 1. Path allowlist. Deletions are always allowed.
+git diff --cached --name-only --diff-filter=ACMR | "$root/scripts/check-paths.sh" || failed=1
+
+# 2. Word denylist, kept outside the repo. Whole words, case-insensitive,
+#    checked against added lines and file paths. Fails closed if missing.
+if [ ! -f "$denylist" ]; then
+  fail "Denylist not found at $denylist (set HOMESITE_DENYLIST to override)"
+else
+  words=$(grep -vE '^\s*(#|$)' "$denylist" || true)
+  if [ -n "$words" ]; then
+    added=$(git diff --cached -U0 --diff-filter=ACMR | grep -E '^\+' | grep -vE '^\+\+\+ ' || true)
+    names=$(git diff --cached --name-only --diff-filter=ACMR)
+    hits=$(printf '%s\n%s\n' "$added" "$names" | grep -oiwF -f <(printf '%s\n' "$words") | sort -fu || true)
+    if [ -n "$hits" ]; then
+      while IFS= read -r hit; do
+        files=$(git grep --cached -liwF -e "$hit" -- $(git diff --cached --name-only --diff-filter=ACMR) 2>/dev/null | tr '\n' ' ' || true)
+        fail "Denylisted word \"$hit\" in: ${files:-a file path}"
+      done <<< "$hits"
+    fi
+  fi
+fi
+
+# 3. Secrets.
+if ! command -v gitleaks >/dev/null; then
+  fail "gitleaks not installed (brew install gitleaks)"
+elif ! gitleaks git --pre-commit --staged --redact --verbose --no-banner --log-level warn "$root"; then
+  fail "gitleaks found a possible secret"
+fi
+
+if [ "$failed" = 1 ]; then
+  echo "Commit blocked. Fix the above, or update .commit-allowlist if a new path should be public." >&2
+  exit 1
+fi

@@ -1,0 +1,12 @@
+@import '@fontsource-variable/outfit';
+
+/* Element-level base only. Component styles live in StyleX. */
+html {
+  background: #eceae4;
+  color: #1f1f21;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
