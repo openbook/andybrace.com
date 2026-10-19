@@ -6,7 +6,7 @@ Decisions about this site's content, design and code, one file each, named `NNNN
 
 - Never rewrite an accepted decision. To change one, add a new file with `supersedes:`, then set the old file's `status` to `superseded` and fill in `superseded_by`. Fixing a typo is fine.
 - Keep it short. Say what was decided and why, and add consequences when they aren't obvious.
-- A decision records a choice already made. Planned work goes in an issue.
+- A decision records a choice already made. Planned work is tracked outside this repo.
 
 ## Frontmatter
 
