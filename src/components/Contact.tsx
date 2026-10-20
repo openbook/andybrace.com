@@ -2,24 +2,18 @@ import * as stylex from '@stylexjs/stylex';
 import Section from './Section';
 import Link from './Link';
 
-type Props = {
-  email: string;
-  linkedInUrl: string;
-  gitHubUrl: string;
-};
-
-export default function Contact({ email, linkedInUrl, gitHubUrl }: Props) {
+export default function Contact() {
   return (
     <Section id="contact" heading="Get in touch">
       <ul {...stylex.props(styles.list)}>
         <li>
-          <Link href={`mailto:${email}`}>{email}</Link>
+          <Link href="mailto:contact@openbook.uk.com">contact@openbook.uk.com</Link>
         </li>
         <li>
-          <Link href={linkedInUrl}>LinkedIn</Link>
+          <Link href="https://www.linkedin.com/in/andrewbrace">LinkedIn</Link>
         </li>
         <li>
-          <Link href={gitHubUrl}>GitHub</Link>
+          <Link href="https://github.com/openbook">GitHub</Link>
         </li>
       </ul>
     </Section>

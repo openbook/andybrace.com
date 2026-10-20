@@ -2,14 +2,13 @@ import * as stylex from '@stylexjs/stylex';
 import Column from './Column';
 import { text } from '../styles/tokens.stylex';
 
-type Props = {
-  privacyNote: string;
-};
-
-export default function Footer({ privacyNote }: Props) {
+export default function Footer() {
   return (
     <Column as="footer" xstyle={styles.footer}>
-      <p {...stylex.props(styles.note)}>{privacyNote}</p>
+      <p {...stylex.props(styles.note)}>
+        This site sets no cookies. Cloudflare hosts it and logs each request, including the IP
+        address. I see only aggregate traffic figures.
+      </p>
     </Column>
   );
 }
