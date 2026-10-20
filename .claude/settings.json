@@ -3,7 +3,9 @@
     "PreToolUse": [
       {
         "matcher": "Bash|Read|Edit|Write|Grep|Glob",
-        "hooks": [{ "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/guard.mjs" }]
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/guard.mjs" }
+        ]
       }
     ]
   }
