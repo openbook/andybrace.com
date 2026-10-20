@@ -26,7 +26,7 @@ Code follows [docs/coding-standards.md](docs/coding-standards.md). Run `npm run 
 
 ## Recording decisions
 
-Decisions about content, design and code go in `docs/decisions/`, one file each. See [docs/decisions/README.md](docs/decisions/README.md).
+Choices that materially affect how the site works or looks go in `docs/decisions/`, one file each. Content choices don't need a record. See [docs/decisions/README.md](docs/decisions/README.md).
 
 ## Accessibility
 
