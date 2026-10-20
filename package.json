@@ -13,6 +13,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test:a11y": "playwright test",
+    "test:live": "BASE_URL=https://andybrace.com playwright test",
     "test:lighthouse": "npm run build && lhci autorun",
     "verify": "npm run format:check && npm run check && npm run lint && npm run test:a11y && npm run test:lighthouse"
   },
