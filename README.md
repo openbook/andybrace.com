@@ -25,6 +25,7 @@ npm run dev                      # http://localhost:4321
 | `npm run check` | Astro and TypeScript type check. |
 | `npm run lint` | ESLint, including accessibility rules for `.tsx` and StyleX rules. |
 | `npm run test:a11y` | Builds, then runs the Playwright tests on desktop and mobile: axe, 320px reflow, embed captions, no scripts or cookies, and security headers. |
+| `npm run test:live` | Runs the Playwright tests against https://andybrace.com. Not part of `verify`. |
 | `npm run test:lighthouse` | Builds, then runs Lighthouse three times against budgets. |
 | `npm run verify` | All of the above in order. Run it before every commit. |
 
@@ -41,6 +42,7 @@ The site says it's accessible and fast. Each claim has a check, and `npm run ver
 | Fast first load | Lighthouse 95+ and under 100 KB | `lighthouserc.cjs` |
 | No JavaScript, cookies or browser storage | Script requests, cookies and storage checked | `tests/privacy.spec.ts` |
 | Browser enforces it: no scripts, framing or forms | Security headers sent, no CSP violations | `public/_headers`, `tests/headers.spec.ts` |
+| Visitors get the page as built | The browser tests rerun against andybrace.com after each deploy and daily, plus a check for Cloudflare edge rewrites | `.github/workflows/live.yml`, `tests/edge.spec.ts` |
 | Dependencies stay current | Weekly Dependabot PRs, checked by CI | `.github/dependabot.yml` |
 | Keyboard, screen reader, zoom | Manual, with results logged | `ACCESSIBILITY.md` |
 

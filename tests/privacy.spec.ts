@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 // Decision 0016: nothing runs in the visitor's browser and nothing is stored on their device.
-// Covers the build only. Keep Cloudflare features that inject scripts at the edge turned off.
+// npm run test:live repeats this against the live site, which catches scripts Cloudflare injects.
 const pages = ['/'];
 
 for (const path of pages) {
