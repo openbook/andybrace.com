@@ -6,6 +6,7 @@ Anyone landing on the site should know within about 30 seconds what I do, who th
 
 - **All markup goes in `.tsx` components** in `src/components/`. StyleX only compiles JS and TSX, and the accessibility lint only covers `.tsx`. Files in `src/pages/` and `src/layouts/` stay thin.
 - **Style with StyleX and the tokens** in `src/styles/tokens.stylex.ts`. Don't write raw colours, font sizes or spacing in a component. If a value is missing, add a token. `global.css` holds only the font import and the `html` base.
+- **Don't repeat a style block; make it a component.** If a group of styles would appear in a second component, move it into one. `Column` is the page column and `Link` is every text link, with its focus style. Pass extra styles through `xstyle`.
 - **No client-side JavaScript.** Components render to static HTML. Don't add a `client:*` directive without a decision record saying why.
 - **Colour.** Cobalt (`colors.accent`) is for links, rules and focus outlines. Red and green are for block backgrounds only, with near-black text on top. Both fail 3:1 contrast on the page background, so never use them for lines or text.
 - **Accessibility target is WCAG 2.2 AA.** Use semantic HTML first. Every interactive element needs a visible focus style.

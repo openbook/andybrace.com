@@ -1,11 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero';
+import Section from '../components/Section';
 import Contact from '../components/Contact';
+import { oneLiner, howICanHelp, whatIBring, ai, bestWork } from '../copy';
 import Footer from '../components/Footer';
-
-const oneLiner =
-  "I'm a developer who helps research and design-led teams take an idea through to something live that works for everyone, working out who it's for and what's worth building along the way.";
 
 const linkedInUrl = 'https://www.linkedin.com/in/andrewbrace';
 const gitHubUrl = 'https://github.com/openbook';
@@ -17,6 +16,10 @@ const privacyNote =
 <Layout title="Andy Brace" description={oneLiner}>
   <main>
     <Hero name="Andy Brace" oneLiner={oneLiner} />
+    <Section id="how-i-can-help" heading="How I can help" paragraphs={[howICanHelp]} />
+    <Section id="what-i-bring" heading="What I bring" items={whatIBring} />
+    <Section id="ai" heading="How I work with AI" paragraphs={[ai]} />
+    <Section id="best-work" heading="Where I do my best work" paragraphs={[bestWork]} />
     <Contact email="contact@openbook.uk.com" linkedInUrl={linkedInUrl} gitHubUrl={gitHubUrl} />
   </main>
   <Footer privacyNote={privacyNote} />
