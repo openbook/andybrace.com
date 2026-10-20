@@ -5,5 +5,8 @@ test('an unknown address returns 404 with a link home', async ({ page }) => {
   const response = await page.goto('/no-such-page');
   expect(response!.status()).toBe(404);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Page not found');
-  await expect(page.getByRole('link', { name: 'Go to the home page' })).toHaveAttribute('href', '/');
+  await expect(page.getByRole('link', { name: 'Go to the home page' })).toHaveAttribute(
+    'href',
+    '/',
+  );
 });

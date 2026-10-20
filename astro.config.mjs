@@ -8,7 +8,12 @@ const headers = Object.fromEntries(
   readFileSync('public/_headers', 'utf8')
     .split('\n')
     .filter((line) => /^\s+\S+:/.test(line))
-    .map((line) => line.trim().split(/:\s(.*)/s).slice(0, 2)),
+    .map((line) =>
+      line
+        .trim()
+        .split(/:\s(.*)/s)
+        .slice(0, 2),
+    ),
 );
 
 export default defineConfig({

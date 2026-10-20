@@ -6,7 +6,10 @@ const pages = ['/'];
 for (const path of pages) {
   test(`${path} sends security headers and breaks no CSP rule`, async ({ page }) => {
     const violations: string[] = [];
-    page.on('console', (m) => /Content.Security.Policy/i.test(m.text()) && violations.push(m.text()));
+    page.on(
+      'console',
+      (m) => /Content.Security.Policy/i.test(m.text()) && violations.push(m.text()),
+    );
     const response = await page.goto(path);
     const headers = response!.headers();
 

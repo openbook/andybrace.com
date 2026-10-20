@@ -20,6 +20,10 @@ This is a one-person site, but it runs the way a small team would run it, so an 
 
 Agents work on branches and follow [AGENTS.md](AGENTS.md). Whoever runs the agent reviews its diff before committing, owns what gets committed, and does the pushing. The pre-commit guard and the agent hook apply whether a person or an agent typed the command.
 
+## Coding standards
+
+Code follows [docs/coding-standards.md](docs/coding-standards.md). Run `npm run format` before committing; `npm run verify` checks it.
+
 ## Recording decisions
 
 Decisions about content, design and code go in `docs/decisions/`, one file each. See [docs/decisions/README.md](docs/decisions/README.md).
