@@ -4,7 +4,13 @@ This is a one-person site, but it runs the way a small team would run it, so an 
 
 ## Workflow
 
-1. Branch from `main`. Name the branch after the change, for example `feat/add-proof-section`.
+1. Branch from `main`. Name the branch `<type>/<short-description>` in lowercase with hyphens, for example `feat/proof-section`. The types are the Conventional Commits ones:
+   - `feat`: something new on the site
+   - `fix`: a bug fix
+   - `docs`: documentation and decision records only
+   - `refactor`: a code change that doesn't change behaviour
+   - `test`: tests only
+   - `chore`: tooling, config, CI and dependencies
 2. Make the change in small commits. Run `npm run verify` before each one.
 3. Open a pull request with a short description of what changed, why, and anything a reviewer should check by hand. Screenshots help for visual changes.
 4. CI runs `npm run verify`, plus the path and secret checks, on the pull request. It must pass before merging.
