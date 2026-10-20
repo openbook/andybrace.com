@@ -1,6 +1,8 @@
 # Decisions
 
-Decisions about this site's content, design and code, one file each, named `NNNN-slug.md`. The title states what was decided.
+Decisions that materially affect how this site works or looks, one file each, named `NNNN-slug.md`. The title states what was decided.
+
+Record a decision when it materially affects how the site works or looks: the stack, hosting, quality checks, security, privacy, accessibility approach or visual design system such as type and colour. Content choices such as wording, headings, section names or which links appear don't need one.
 
 ## Rules
 
