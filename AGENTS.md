@@ -22,9 +22,10 @@ Anyone landing on the site should know within about 30 seconds what I do, who th
 
 ## Before you commit
 
-1. Run `npm run verify`. It must pass.
-2. Commit with a message that says what changed and why.
-3. If the pre-commit guard blocks the commit, fix what it reports. If a new file legitimately needs to be public, add its path to `.commit-allowlist` and say so in the commit message.
+1. Work on a branch named `<type>/<short-description>`, such as `feat/proof-section` or `chore/update-ci`. The types are listed in [CONTRIBUTING.md](CONTRIBUTING.md).
+2. Run `npm run verify`. It must pass.
+3. Commit with a message that says what changed and why.
+4. If the pre-commit guard blocks the commit, fix what it reports. If a new file legitimately needs to be public, add its path to `.commit-allowlist` and say so in the commit message.
 
 ## What agents can't do
 
