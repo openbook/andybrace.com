@@ -32,4 +32,4 @@ The hook matches on the command text, so it stops mistakes and casual workaround
 
 ## Decisions
 
-When you make a choice about content, design or code that someone would later ask "why?" about, add a file to `docs/decisions/`. The format is in [docs/decisions/README.md](docs/decisions/README.md). Never rewrite an accepted decision. To change one, write a new file that supersedes it.
+Record a decision when it materially affects how the site works or looks: the stack, hosting, quality checks, security, privacy, accessibility approach or visual design system such as type and colour. Content choices such as wording, headings, section names or which links appear don't need one. Add it as a file in `docs/decisions/`. The format is in [docs/decisions/README.md](docs/decisions/README.md). Never rewrite an accepted decision. To change one, write a new file that supersedes it.
