@@ -1,23 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero';
+import HowICanHelp from '../components/HowICanHelp';
+import WhatIBring from '../components/WhatIBring';
+import WorkingWithAI from '../components/WorkingWithAI';
+import BestWork from '../components/BestWork';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 const oneLiner =
   "I'm a developer who helps research and design-led teams take an idea through to something live that works for everyone, working out who it's for and what's worth building along the way.";
-
-const linkedInUrl = 'https://www.linkedin.com/in/andrewbrace';
-const gitHubUrl = 'https://github.com/openbook';
-
-const privacyNote =
-  'This site sets no cookies. Cloudflare hosts it and logs each request, including the IP address. I see only aggregate traffic figures.';
 ---
 
 <Layout title="Andy Brace" description={oneLiner}>
   <main>
     <Hero name="Andy Brace" oneLiner={oneLiner} />
-    <Contact email="contact@openbook.uk.com" linkedInUrl={linkedInUrl} gitHubUrl={gitHubUrl} />
+    <HowICanHelp />
+    <WhatIBring />
+    <WorkingWithAI />
+    <BestWork />
+    <Contact />
   </main>
-  <Footer privacyNote={privacyNote} />
+  <Footer />
 </Layout>

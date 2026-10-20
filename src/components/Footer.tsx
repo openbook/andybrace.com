@@ -1,25 +1,21 @@
 import * as stylex from '@stylexjs/stylex';
-import { colors, fonts, space, text } from '../styles/tokens.stylex';
+import Column from './Column';
+import { text } from '../styles/tokens.stylex';
 
-type Props = {
-  privacyNote: string;
-};
-
-export default function Footer({ privacyNote }: Props) {
+export default function Footer() {
   return (
-    <footer {...stylex.props(styles.footer)}>
-      <p {...stylex.props(styles.note)}>{privacyNote}</p>
-    </footer>
+    <Column as="footer" xstyle={styles.footer}>
+      <p {...stylex.props(styles.note)}>
+        This site sets no cookies. Cloudflare hosts it and logs each request, including the IP
+        address. I see only aggregate traffic figures.
+      </p>
+    </Column>
   );
 }
 
 const styles = stylex.create({
   footer: {
-    fontFamily: fonts.sans,
-    color: colors.text,
     paddingBlock: '3rem',
-    paddingInline: space.gutter,
-    maxWidth: `calc(${space.measure} + 2 * ${space.gutter})`,
   },
   note: {
     fontSize: text.small,
