@@ -1,0 +1,9 @@
+dist/
+.astro/
+.lighthouseci/
+test-results/
+playwright-report/
+package-lock.json
+# Prose, including decision records, which are never rewritten. Padded tables and
+# rewrapping would make diffs noisy for no gain.
+*.md

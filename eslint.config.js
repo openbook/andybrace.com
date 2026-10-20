@@ -2,6 +2,7 @@ import tseslint from 'typescript-eslint';
 import astro from 'eslint-plugin-astro';
 import jsxA11y from 'eslint-plugin-jsx-a11y-x';
 import stylex from '@stylexjs/eslint-plugin';
+import prettier from 'eslint-config-prettier';
 
 export default [
   { ignores: ['dist/', '.astro/', '.lighthouseci/', 'test-results/', 'playwright-report/'] },
@@ -22,4 +23,6 @@ export default [
       '@stylexjs/sort-keys': 'off',
     },
   },
+  // Last, so formatting is left to Prettier and no lint rule disagrees with it.
+  prettier,
 ];

@@ -6,6 +6,9 @@
 .github/*
 .gitignore
 .browserslistrc
+.editorconfig
+.prettierrc.json
+.prettierignore
 astro.config.mjs
 package.json
 package-lock.json

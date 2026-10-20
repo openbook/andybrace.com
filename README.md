@@ -21,6 +21,7 @@ npm run dev                      # http://localhost:4321
 | `npm run dev` | Dev server with hot reload. |
 | `npm run build` | Static build into `dist/`. |
 | `npm run preview` | Serves `dist/` locally. |
+| `npm run format` | Formats the code with Prettier. `format:check` only reports. |
 | `npm run check` | Astro and TypeScript type check. |
 | `npm run lint` | ESLint, including accessibility rules for `.tsx` and StyleX rules. |
 | `npm run test:a11y` | Builds, then runs the Playwright tests on desktop and mobile: axe, 320px reflow, embed captions, no scripts or cookies, and security headers. |
