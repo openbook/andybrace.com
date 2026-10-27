@@ -11,3 +11,15 @@ test('the page is served without edge rewrites', async ({ page }) => {
   expect(html).not.toContain('__cf_email__');
   await expect(page.locator('#contact a[href^="mailto:"]')).toHaveText('contact@openbook.uk.com');
 });
+
+// Cloudflare answers the www redirect before Pages, so only the zone's HSTS setting reaches it
+// (decision 0027). Live only: the local preview has no www host.
+test('the www redirect sends HSTS', async ({ request }) => {
+  test.skip(!process.env.BASE_URL, 'needs the live site');
+  const www = new URL(process.env.BASE_URL!);
+  www.hostname = `www.${www.hostname}`;
+
+  const response = await request.get(www.href, { maxRedirects: 0 });
+  expect(response.status()).toBe(301);
+  expect(response.headers()['strict-transport-security']).toContain('includeSubDomains');
+});

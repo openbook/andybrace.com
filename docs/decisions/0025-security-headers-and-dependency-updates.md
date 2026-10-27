@@ -1,13 +1,13 @@
 ---
 id: 0025
 title: Strict security headers in the repo, and automated dependency updates
-status: accepted
+status: superseded
 date: 2026-10-19
 impact: medium
 area: quality
 related: [0016-edge-stats-no-tracking-script, 0019-cloudflare-pages-hosting, 0023-everything-accessible-and-performant, 0024-ci-on-github-actions]
 supersedes:
-superseded_by:
+superseded_by: 0027-security-headers-zone-hsts-and-security-txt
 sources: ["https://developers.cloudflare.com/pages/configuration/headers/", "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP"]
 ---
 

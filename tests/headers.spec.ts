@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-// Decision 0025: security headers from public/_headers are sent, and the CSP blocks nothing the page needs.
+// Decision 0027: security headers from public/_headers are sent, and the CSP blocks nothing the page needs.
 const pages = ['/'];
 
 for (const path of pages) {

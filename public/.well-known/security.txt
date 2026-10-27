@@ -1,0 +1,5 @@
+Contact: https://github.com/openbook/andybrace.com/security/advisories/new
+Expires: 2027-10-27T00:00:00.000Z
+Policy: https://github.com/openbook/andybrace.com/blob/main/SECURITY.md
+Canonical: https://andybrace.com/.well-known/security.txt
+Preferred-Languages: en

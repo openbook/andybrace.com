@@ -1,8 +1,9 @@
 # Response headers for every page. Cloudflare Pages reads this file, and
 # astro.config.mjs applies the same headers to `astro preview` so the tests see them.
-# See decision 0025.
+# HSTS is also set in Cloudflare's zone settings, which replace it on the live site. Keep the
+# two the same. See decision 0027.
 /*
-  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Strict-Transport-Security: max-age=15552000; includeSubDomains
   Content-Security-Policy: default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
   Referrer-Policy: strict-origin-when-cross-origin
